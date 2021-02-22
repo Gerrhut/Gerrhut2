@@ -1,0 +1,96 @@
+#71200595 - Gerry Sunjay Junjung - C
+#LAB-3-if,elif,else
+# Andi adalah adiknya Anto yang sekarang ada dikelas 4 SD
+# Andi mendapat Tugas Rumah dari sekolahnya untuk mencari jenis bangun datar dari beberapa soal
+# Abangnya Andi yaitu Anto memintamu untuk membuat sebuah pemrograman yang bisa menentukan jenis bangun datar
+# untuk membantu tugas Andi dikarenakan Anto sedang berada diluar Kota.
+# Soalnya yaitu
+# 1. 3 Sisi = 7 Cm, 4 Cm, 11 Cm
+# 2. 3 Sisi = 6 Cm, 11 Cm, 6 Cm
+# 3. 4 Sisi = 8 Cm, 5.5 Cm, 5.5 Cm, 8 Cm
+# 4. 4 Sisi = 3 Cm, 3 Cm, 3 Cm, 3 Cm
+# 5. 4 Sisi = 4 Cm, 7 Cm, 4 Cm, 7 Cm, 30 derajat
+# 6. 4 Sisi = 3 Cm, 7 Cm, 3 Cm, 7 Cm, d1 6, d2, 12 
+# 7. 4 Sisi = 8 Cm, 8 Cm, 5 Cm, 12 Cm
+# 8. 6 Sisi = 6 Cm, 6 Cm, 6 Cm, 6 Cm, 6 Cm, 6 Cm
+# 9. 5 Sisi = 8 Cm, 8 Cm, 8 Cm, 8 Cm, 8 Cm
+#Pemrograman menentukan jenis bangun datar
+
+print ('==========Menentukan Jenis Bangun Datar==========')
+
+#Pilihan Sisi
+tiga  = '3'
+empat = '4'
+lima  = '5'
+enam  = '6'
+
+#Masukkan Pilihan
+pilih = (input("Pilih Banyak Sisi Yang Ingin Dicari : "))
+for i in range (100):
+    if pilih == tiga:
+        a = float(input("Masukkan Panjang Sisi 1: "))
+        b = float(input("Masukkan Panjang Sisi 2: "))
+        c = float(input("Masukkan Panjang Sisi 3: "))
+        #Segitiga Sama Kaki
+        if a == b > c or a == b < c or b == c > a or b == c < a or c == a > b or c == a < b:
+            print ('Merupakan Segitiga Sama Kaki')
+        #Segitiga Sama Sisi
+        elif a == b == c:
+            print ('Merupakan Segitiga Sama Sisi')
+        #Segitiga Sembarang
+        else:
+            print ('Merupakan Segitiga Sembarang')
+    elif pilih == empat:
+        a = float(input("Masukkan Panjang Sisi 1: "))
+        b = float(input("Masukkan Panjang Sisi 2: "))
+        c = float(input("Masukkan Panjang Sisi 3: "))
+        d = float(input("Masukkan Panjang Sisi 4: "))
+        Ya = 'Iya'
+        No = 'Tidak'
+        sudut = input("Apakah Mempunyai Besar Sudut atau Sisi Miring: ")
+        if sudut == Ya:
+            print ('Merupakan Jajar Genjang')
+        else:
+            Ya = 'Iya'
+            No = 'Tidak'
+            diagonal = input("Apakah Mempunyai Diagonal? ")
+            #Layang Layang
+            if diagonal == Ya:
+                d1 = float(input("Masukkan Panjang Diagonal 1: "))
+                d2 = float(input("Masukkan Panjang Diagonal 2: "))
+                print ('Merupakan Layang Layang')
+            else:
+                #Persegi Panjang
+                if a == b and c == d or a == c and b == d or a == d  and b == c:
+                    print ('Merupakan Persegi Panjang')
+                #Trapesium
+                if a == b and c != d or a == c and b != d or a == d and b != c or b == c and a != d or b == d and a != c or c == d and a != b:
+                    print ('Merupakan Trapesium')
+                #Persegi
+                if a == b == c == d:
+                    print ('Merupakan Persegi Sama Sisi')
+    elif pilih == lima:
+        a = float(input("Masukkan Panjang Sisi 1: "))
+        b = float(input("Masukkan Panjang Sisi 2: "))
+        c = float(input("Masukkan Panjang Sisi 3: "))
+        d = float(input("Masukkan Panjang Sisi 4: "))
+        e = float(input("Masukkan Panjang Sisi 5: "))
+        if a == b == c == d == e:
+            print ('Merupakan Pentagon')
+    else:
+        a = float(input("Masukkan Panjang Sisi 1: "))
+        b = float(input("Masukkan Panjang Sisi 2: "))
+        c = float(input("Masukkan Panjang Sisi 3: "))
+        d = float(input("Masukkan Panjang Sisi 4: "))
+        e = float(input("Masukkan Panjang Sisi 5: "))
+        f = float(input("Masukkan Panjang Sisi 6: "))
+        if a == b == c == d == e == f:
+            print ('Merupakan Hexagon')
+    Ya = "Iya"
+    No = "Tidak"
+    lagi = input("Apakah Anda Ingin Melanjutkan Lagi? : ")
+    if lagi == Ya:
+        pilih = (input("Pilih Banyak Sisi Yang Ingin Dicari : "))
+    else:
+        print ('Terimakasih')
+        break
